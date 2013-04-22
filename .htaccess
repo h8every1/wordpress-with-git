@@ -1,0 +1,5 @@
+# deny access to the top-level git repository:
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule \.git - [F,L]
+</IfModule>
