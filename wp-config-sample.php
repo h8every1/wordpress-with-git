@@ -14,6 +14,12 @@
  * @package WordPress
  */
 
+/**
+ * Pull in local database definitions from wp-config-db.php
+ */
+if ( file_exists( dirname(__FILE__) . '/wp-config-db.php' ) )
+  include( dirname(__FILE__) . '/wp-config-db.php' );
+
 define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
 define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
 define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content');
@@ -22,15 +28,19 @@ define('WP_DEFAULT_THEME', 'set_your_theme_here');
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
+if (!defined('DB_NAME'))
 define('DB_NAME', 'database_name_here');
 
 /** MySQL database username */
+if (!defined('DB_USER'))
 define('DB_USER', 'username_here');
 
 /** MySQL database password */
+if (!defined('DB_PASSWORD'))
 define('DB_PASSWORD', 'password_here');
 
 /** MySQL hostname */
+if (!defined('DB_HOST'))
 define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
@@ -75,16 +85,7 @@ $table_prefix  = 'wp_';
  * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
  * language support.
  */
-define('WPLANG', '');
-
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- */
-define('WP_DEBUG', false);
+define('WPLANG', 'ru_RU');
 
 /* That's all, stop editing! Happy blogging. */
 
