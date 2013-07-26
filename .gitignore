@@ -1,3 +1,7 @@
 wp-config.php
 wp-config-db.php
 .idea
+
+# wp-content stuff
+wp-content/debug.log
+wp-content/uploads/*
