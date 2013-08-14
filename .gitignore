@@ -5,3 +5,8 @@ wp-config-db.php
 # wp-content stuff
 wp-content/debug.log
 wp-content/uploads/*
+
+# sypex dumper
+sxd/backup/*.gz
+sxd/cfg.php
+sxd/ses.php
