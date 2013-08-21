@@ -7,6 +7,8 @@ wp-content/debug.log
 wp-content/uploads/*
 
 # sypex dumper
-sxd/backup/*.gz
+sxd/backup/*
+!sxd/backup/.htaccess
+!sxd/backup/.index.htm
 sxd/cfg.php
 sxd/ses.php
