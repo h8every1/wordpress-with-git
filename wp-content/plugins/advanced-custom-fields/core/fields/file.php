@@ -80,7 +80,9 @@ class acf_field_file extends acf_field
 				$o['title']	= $file->post_title;
 				$o['size'] = size_format(filesize( get_attached_file( $file->ID ) ));
 				$o['url'] = wp_get_attachment_url( $file->ID );
-				$o['name'] = end(explode('/', $o['url']));				
+				
+				$explode = explode('/', $o['url']);
+				$o['name'] = end( $explode );				
 			}
 		}
 		
@@ -244,6 +246,7 @@ class acf_field_file extends acf_field
 				'title' => $attachment->post_title,
 				'caption' => $attachment->post_excerpt,
 				'description' => $attachment->post_content,
+				'mime_type'	=> $attachment->post_mime_type,
 				'url' => wp_get_attachment_url( $attachment->ID ),
 			);
 		}

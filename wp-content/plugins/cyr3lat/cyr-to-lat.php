@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Cyr to Lat enhanced
-Plugin URI: http://wordpress.org/extend/plugins/cyr3lat/
+Plugin URI: http://wordpress.org/plugins/cyr3lat/
 Description: Converts Cyrillic, European and Georgian characters in post, term slugs and media file names to Latin characters. Useful for creating human-readable URLs. Based on the original plugin by Anton Skorobogatov.
 Author: Sol, Sergey Biryukov, Nikolay Karev, Dmitri Gogelia
 Author URI: http://karevn.com/
-Version: 3.3.3
+Version: 3.4
 */ 
 
 function ctl_sanitize_title($title) {
@@ -46,12 +46,16 @@ function ctl_sanitize_title($title) {
 		case 'bg_BG':
 			$iso9_table['Щ'] = 'SHT';
 			$iso9_table['щ'] = 'sht'; 
-			$iso9_table['Ъ'] = 'A`';
-			$iso9_table['ъ'] = 'a`';
+			$iso9_table['Ъ'] = 'A';
+			$iso9_table['ъ'] = 'a';
 			break;
 		case 'uk':
-			$iso9_table['И'] = 'Y`';
-			$iso9_table['и'] = 'y`';
+			$iso9_table['И'] = 'Y';
+			$iso9_table['и'] = 'y';
+			break;
+		case 'uk_ua':
+			$iso9_table['И'] = 'Y';
+			$iso9_table['и'] = 'y';
 			break;
 	}
 
@@ -70,7 +74,8 @@ function ctl_sanitize_title($title) {
 		if (function_exists('iconv')){
 			$title = iconv('UTF-8', 'UTF-8//TRANSLIT//IGNORE', $title);
 		}
-		$title = preg_replace("/[^A-Za-z0-9'_\-\.]/", '-', $title);
+		$title = preg_replace("/[\'_\-\s]/", '-', $title);
+		$title = preg_replace("/[^A-Za-z0-9\-\.]/", '', $title);
 		$title = preg_replace('/\-+/', '-', $title);
 		$title = preg_replace('/^-+/', '', $title);
 		$title = preg_replace('/-+$/', '', $title);
@@ -108,4 +113,3 @@ function ctl_schedule_conversion() {
 	add_action('shutdown', 'ctl_convert_existing_slugs');
 }
 register_activation_hook(__FILE__, 'ctl_schedule_conversion');
-?>
