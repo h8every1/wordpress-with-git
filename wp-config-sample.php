@@ -48,6 +48,7 @@ $table_prefix  = 'wp_';
  * language support.
  */
 define('WPLANG', 'ru_RU');
+$wp_local_package = 'ru_RU';
 
 /* That's all, stop editing! Happy blogging. */
 
