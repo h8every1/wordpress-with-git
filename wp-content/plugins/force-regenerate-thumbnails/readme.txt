@@ -1,15 +1,13 @@
 === Force Regenerate Thumbnails ===
 Contributors: Pedro Elsner
 Requires at least: 2.8
-Tested up to: 3.5
+Tested up to: 3.8
 Stable tag: trunk
 Tags: force, regenerate thumbnails, thumbnail, thumbnails
 
 Delete and REALLY force the regenerate thumbnail.
 
 == Description ==
-
-* Based in plugin: Regenerate Thumbnails - All credits and thanks to Viper007Bond
 
 Force Regenerate Thumbnails allows you to delete all old images size and REALLY regenerate the thumbnails for your image attachments.
 
@@ -28,6 +26,32 @@ See the [screenshots tab](http://wordpress.org/extend/plugins/force-regenerate-t
 2. You can resize specific multiples images using the checkboxes and the "Bulk Actions" dropdown
 
 == ChangeLog ==
+
+= 2.0.3 =
+* Add debug information on regenerate
+* Fix issue with update "_wp_attachment_metadata" and "_wp_attached_file" on windows
+
+= 2.0.2 =
+* New style for results (thanks @justonarnar)
+* Automatic update "_wp_attachment_metadata" and "_wp_attached_file" (thanks @norecipes)
+
+= 2.0.1 =
+* Fix issue with get_option('upload_path') in Wordpress 3.5+ (thanks @DavidLingren)
+
+= 2.0.0 = 
+* Fix error handle
+
+= 1.8 =
+* New function to display ajax results
+
+= 1.7 =
+* Fix issue with getters path in Linux/Windows/Unix servers
+
+= 1.6 =
+* New CORE to regenerate thumbnails
+
+= 1.5 =
+* Reviewed some messages
 
 = 1.4 =
 * Change default image editor to GB in Wordpress 3.5+ (thanks @nikcree)
