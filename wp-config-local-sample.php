@@ -56,7 +56,7 @@ define( 'NONCE_SALT', 'put your unique phrase here' );
 /**#@-*/
 
 /**
- * Define paths for WordPress in seaprate directory
+ * Define paths for git-controlled WordPress in separate directory
  */
 
 define( 'WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress' );
