@@ -2,7 +2,7 @@
 Contributors: Atrax, SergeyBiryukov, karevn, webvitaly
 Tags: cyrillic, latin, l10n, russian, rustolat, slugs, translations, transliteration, media, georgian, european, diacritics, ukrainian
 Requires at least: 2.3
-Tested up to: 3.8.1
+Tested up to: 4.1
 Stable tag: 3.5
 
 Converts Cyrillic, European and Georgian characters in post, page and term slugs to Latin characters.
