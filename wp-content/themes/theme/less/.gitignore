@@ -1,0 +1,2 @@
+# Don't add css files, everything should be included in style.less in theme root
+.css

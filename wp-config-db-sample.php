@@ -33,7 +33,7 @@ define( 'DB_HOST',     'localhost'          );
 /*
  * Set theme
  */
-define('WP_DEFAULT_THEME', 'set_your_theme_here');
+define('WP_DEFAULT_THEME', 'theme');
 
 /**#@+
  * Authentication Unique Keys and Salts.
