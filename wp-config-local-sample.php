@@ -1,8 +1,8 @@
 <?php
 /**
- * Make a copy of this file named wp-config-db.php
- * wp-config-db SHOULD NOT be version controled, add it to gitignore
- * Use this to store database access information so the main
+ * Make a copy of this file named wp-config-local.php
+ * wp-config-local SHOULD NOT be version controlled.
+ * Use this to store database access information and local settings so the main
  * wp-config.php file can be modified and version controlled.
  */
 
@@ -54,3 +54,11 @@ define('LOGGED_IN_SALT',   'put your unique phrase here');
 define('NONCE_SALT',       'put your unique phrase here');
 
 /**#@-*/
+
+/*
+* Define paths for WordPress in seaprate directory
+*/
+define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
+define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
+define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content');
+define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content');

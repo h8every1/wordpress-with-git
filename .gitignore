@@ -1,5 +1,4 @@
-wp-config.php
-wp-config-db.php
+wp-config-local.php
 .idea
 
 # wp-content stuff
@@ -9,6 +8,6 @@ wp-content/uploads/*
 # sypex dumper
 sxd/backup/*
 !sxd/backup/.htaccess
-!sxd/backup/.index.htm
+!sxd/backup/index.htm
 sxd/cfg.php
 sxd/ses.php

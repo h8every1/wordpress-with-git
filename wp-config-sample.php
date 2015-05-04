@@ -15,15 +15,10 @@
  */
 
 /**
- * Pull in local database definitions from wp-config-db.php
+ * Pull in local settings from wp-config-local.php
  */
-if ( file_exists( dirname(__FILE__) . '/wp-config-db.php' ) )
-  include( dirname(__FILE__) . '/wp-config-db.php' );
-
-define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
-define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
-define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content');
-define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content');
+if ( file_exists( dirname(__FILE__) . '/wp-config-local.php' ) )
+  include( dirname(__FILE__) . '/wp-config-local.php' );
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
