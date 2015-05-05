@@ -20,3 +20,4 @@ $CFG = array (
   'confirm' => '6',
   'exitURL' => './',
 );
+?>

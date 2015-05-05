@@ -1,5 +1,5 @@
 <?php
-// Sypex Dumper Lite 2
+// Sypex Dumper 2
 header("Content-Type: text/html; charset=utf-8");
 error_reporting(0);
 set_error_handler("sxd_error");
@@ -42,6 +42,7 @@ if(!empty($_POST['ajax']['job']) && preg_match("/^[\w-]+$/", $_POST['ajax']['job
 				foreach($temp AS $l){
 					if(empty($l)) continue;
 					$t = explode("\t", $l);
+					if(count($t) < 3) continue;
 					if($t[0] != $old_time){
 						if(!empty($logs)) $log .= "sxd.log.add('{$old_time}',[" . implode(',', $logs) . "]);";
 						$old_time = $t[0];
@@ -73,7 +74,7 @@ if(!empty($_POST['ajax']['job']) && preg_match("/^[\w-]+$/", $_POST['ajax']['job
 				echo "sxd.log.add({$d},[" . esc($LNG['stop_' . $f[9]]) . "]);" . (($f[9] == 3 || $f[9] == 4) ? 'sxd.resumeJob();' : 'sxd.hideLoading();');
 			}
 			else{
-				if($JOB['act'] == 'backup') $f[3] = filesize($JOB['file_tmp']);
+				if($JOB['act'] == 'backup') $f[3] = filesize(file_exists($JOB['file_name']) ? $JOB['file_name'] : $JOB['file_tmp']);
 				if($f[4] != 'EK' && time() > $f[1] + 45) {
 					fopen($JOB['file_stp'],'w');
 					$f[9] = 0;
@@ -127,7 +128,7 @@ function sxd_error($errno, $errmsg, $filename, $linenum, $vars){
 	$str = "{$errortype[$errno]}: {$errmsg} ({$filename}:{$linenum})";
 	//error_log("[info.php]\n{$str}\n", 3, "error.log"); 
     if($errno == 8 || $errno == 1024) {
-    	echo "sxd.log.add('" . date("Y.m.d H:i:s") . "',[" . esc($str) . "], 4);sxd.hideLoading();";;
+    	echo "sxd.log.add('" . date("Y.m.d H:i:s") . "',[" . esc($str) . "], 4);sxd.hideLoading();";
 	}
     elseif($errno < 1024) {
     	echo "sxd.log.add('" . date("Y.m.d H:i:s") . "',[" . esc($str) . "], 4);sxd.hideLoading();";

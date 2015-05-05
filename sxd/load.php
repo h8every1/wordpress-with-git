@@ -11,7 +11,7 @@ if(!empty($_SERVER['QUERY_STRING']) && preg_match("/^(\w+)(\.v\d+)?(pro)?\.(lng\
 		case 'js':  $type = 'application/x-javascript; charset=UTF-8'; break;
 		case 'lng.js': 
 			header('Content-Type: application/x-javascript; charset=UTF-8');
-			if(!ini_get('zlib.output_compression') && function_exists('ob_gzhandler')) ob_start('ob_gzhandler');
+			//if(!ini_get('zlib.output_compression') && function_exists('ob_gzhandler')) ob_start('ob_gzhandler');
 			include("lang/lng_{$m[1]}.php");
 			echo 'sxdlng = ' . sxd_php2json($LNG['js']) . ';';
 			exit;
@@ -21,7 +21,7 @@ if(!empty($_SERVER['QUERY_STRING']) && preg_match("/^(\w+)(\.v\d+)?(pro)?\.(lng\
 	}	
 	$file .= $m[1] . '.' . $m[4];
 	if(is_file($file)){
-		if($compress) if(!ini_get('zlib.output_compression') && function_exists('ob_gzhandler')) ob_start('ob_gzhandler');
+		//if($compress) if(!ini_get('zlib.output_compression') && function_exists('ob_gzhandler')) ob_start('ob_gzhandler');
 		header('Content-Type: ' . $type);
 		readfile($file);exit;
 	}
