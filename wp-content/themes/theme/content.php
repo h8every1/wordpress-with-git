@@ -36,11 +36,11 @@ if (is_search()) {
 
 	<header class="b-post--header">
 		<?php
-			if ( is_single() ) :
+			if ( is_single() ) {
 				the_title( '<h2 class="b-title b-title__post b-title__post-single">', '</h2>' );
-			else :
+			} else {
 				the_title( sprintf( '<h3 class="b-title b-title__post b-title__post-list"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
-			endif;
+			};
 		?>
 		<?php
 		if (current_user_can('edit_posts')) {
