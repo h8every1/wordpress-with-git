@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Menu Walker that doesn't insert whitespace after item <li> tag.
+ * Useful when items have display: inline-block;
+ * InlineWalkerNavMenu.php
+ * Created by h8every1 on 13.06.2015 18:16
+ *
+ * Usage: wp_nav_menu(array('walker'=> new Inline_Walker_Nav_Menu));
+ */
+class Inline_Walker_Nav_Menu extends Walker_Nav_Menu {
+    public function end_el( &$output, $item, $depth = 0, $args = array() ) {
+        $output .= "</li>";
+    }
+}
