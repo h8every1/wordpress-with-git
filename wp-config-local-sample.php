@@ -64,5 +64,5 @@ define( 'WP_HOME', 'http://' . $_SERVER['SERVER_NAME'] );
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
 define( 'WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content' );
 
-// diable adding of paragraphs in Contact Form 7 plugin
+// disable adding of paragraphs in Contact Form 7 plugin
 define( 'WPCF7_AUTOP', false);
