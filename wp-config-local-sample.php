@@ -66,3 +66,6 @@ define( 'WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content' );
 
 // disable adding of paragraphs in Contact Form 7 plugin
 define( 'WPCF7_AUTOP', false);
+
+// disable auto-updating at all.
+define( 'AUTOMATIC_UPDATER_DISABLED', true );
