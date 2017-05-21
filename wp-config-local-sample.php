@@ -25,9 +25,9 @@ if ( WP_DEBUG ) {
 /**
  * WordPress Database settings
  */
-define( 'DB_NAME', 'database_name_here' );
-define( 'DB_USER', 'db_username_here' );
-define( 'DB_PASSWORD', 'db_password_here' );
+define( 'DB_NAME', 'wordpress' );
+define( 'DB_USER', 'root' );
+define( 'DB_PASSWORD', '' );
 define( 'DB_HOST', 'localhost' );
 
 /**
