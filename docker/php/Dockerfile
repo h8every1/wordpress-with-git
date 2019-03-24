@@ -41,7 +41,7 @@ RUN { \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
 RUN if [ $WITH_XDEBUG = "true" ] ; then \
-        pecl install xdebug; \
+        pecl install xdebug-beta; \
         docker-php-ext-enable xdebug; \
         { \
         echo "zend_extension=xdebug.so"; \
