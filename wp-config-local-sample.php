@@ -9,17 +9,16 @@
 /**
  * Debug block, set WP_DEBUG to false to disable this on the live site
  */
-
 define( 'WP_DEBUG', true );
-if ( WP_DEBUG ) {
-	@ini_set( 'display_errors', true );
-	@ini_set( 'error_reporting', E_ALL | E_STRICT );
-	@ini_set( 'error_log', $_SERVER['DOCUMENT_ROOT'] . '/php_error.log' );
-	define( 'WP_DEBUG_LOG', true );
-	define( 'WP_DEBUG_DISPLAY', true );
-	define( 'SCRIPT_DEBUG', true );
+define( 'EXTRA_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
+
+if ( EXTRA_DEBUG ) {
+    define( 'WP_DEBUG_DISPLAY', true );
+    define( 'SCRIPT_DEBUG', true );
 } else {
-	define( 'WP_DEBUG_DISPLAY', false );
+    define( 'WP_DEBUG_DISPLAY', false );
+    define( 'SCRIPT_DEBUG', false );
 }
 
 /**
@@ -58,11 +57,11 @@ define( 'NONCE_SALT', 'put your unique phrase here' );
 /**
  * Define paths for git-controlled WordPress in separate directory
  */
-
-define( 'WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress' );
-define( 'WP_HOME', 'http://' . $_SERVER['SERVER_NAME'] );
+$serverName = $_SERVER['SERVER_NAME'] ?: $_SERVER['HTTP_HOST'] ?: 'localhost';
+define( 'WP_SITEURL', 'http://' . $serverName . '/wordpress' );
+define( 'WP_HOME', 'http://' . $serverName);
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content' );
+define( 'WP_CONTENT_URL', 'http://' . $serverName . '/wp-content' );
 
 // disable adding of paragraphs in Contact Form 7 plugin
 define( 'WPCF7_AUTOP', false);
