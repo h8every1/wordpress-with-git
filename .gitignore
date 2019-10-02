@@ -1,6 +1,7 @@
 Thumbs.db
 .DS_Store
 
+nginx.conf
 docker-compose.override.yml
 wp-config-local.php
 .idea
